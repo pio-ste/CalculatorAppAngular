@@ -1,0 +1,33 @@
+<h4>Kursy walut </h4>
+<div class= "card my-3 shadow p-3 mb-5 rounded bg-dark text-white">
+    <form class="m-2" [formGroup] = "currencyForm">
+        <select class="form-control" formControlName = "currencyControl" (change)="selectOptionChange($event.target.value)">
+            <option [value]="currency" *ngFor="let currency of currencyName">
+                {{currency}}
+            </option>
+        </select>
+    </form>
+    
+    <div class= "mx-2" *ngFor="let rate of currencies[3]; let i = index" >
+        <p> <b>Data aktualizacji:</b>  {{rate.effectiveDate}}</p>
+        <p> <b>Wartość: </b> {{rate.mid}} zł</p>
+    </div>
+
+    <div class="row">
+        <div class="col-2 ml-2">
+            <label for="inputQuantityCurrency">Ilość {{currentCurrency}}</label>
+        </div>
+        <div class="col-4 mb-1">
+            <input [(ngModel)] = "quantity" type="number" class="form-control" id="inputQuantityCurrency">
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" (click)="convertCurrency()">Przelicz</button>
+        </div>
+        <div class="col-3" *ngIf="result">
+            <h3>{{result}} zł</h3>
+        </div>
+    </div>
+    <div class="alert alert-danger mx-2 mt-3" style="text-align: center;" *ngIf="quantity<0" role="alert">
+        Podana ilość {{currentCurrency}} nie może być ujemna!!
+    </div>
+</div>

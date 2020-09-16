@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-3"></div>
+        <div class="col-md-6 shadow-lg p-4 mb-4 bg-dark mt-4">
+            <div class="input">{{ inputOperation }}</div>
+            <div class="output">{{ result }}</div>
+            <div class="keypad mt-2">
+                <button type="button" class="btnAC btn btn-danger mb-2" (click) = "clear()">AC</button>
+                <button type="button" class="btnAction btn btn-success mb-2" (click) = "clickOperator('/')">/</button>
+
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('7')">7</button>
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('8')">8</button>
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('9')">9</button>
+                <button type="button" class="btnAction btn btn-success mb-2" (click) = "clickOperator('x')">x</button>
+
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('4')">4</button>
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('5')">5</button>
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('6')">6</button>
+                <button type="button" class="btnAction btn btn-success mb-2" (click) = "clickOperator('-')">-</button>
+
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('1')">1</button>
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('2')">2</button>
+                <button type="button" class="btnDigit btn btn-light mb-2" (click) = "clickDigit('3')">3</button>
+                <button type="button" class="btnAction btn btn-success mb-2" (click) = "clickOperator('+')">+</button>
+                
+                <button type="button" class="btnDigit btn btn-light" (click) = "clickDigit('0')">0</button>
+                <button type="button" class="btnDigit btn btn-warning" (click) = "clickDigit('.')">.</button>
+                <button type="button" class="btnResult btn btn-primary" (click)="getResult()">=</button>
+            </div>
+        </div>
+    <div class="col-md-3"></div>
+</div>
